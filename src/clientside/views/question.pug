@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Stackoverflow
+        style 
+        link(rel="stylesheet", href="../static/style.css")
+        
+            
+    body
+        div(class='header') 
+            a(href='/') Home
+        
+        -var link=question.href;
+        a(href=link) #{question.title}
+        div(class='container')
+            div(class='question')
+                div(class='description')
+                    p #{question.description}
+                    div(class='questionComments')
+                        h2 Commnets:
+                        ul(class='questionCommentsList')
+                            each qcomment in question.questionComments
+                                li #{qcomment}
+                div(class='answers')
+                    h2 Answers:
+                    ol(class='answersList') 
+                        each ans in question.answers 
+                            hr
+                            li(class='answer') #{ans.answer}
+                                h2 Comments:
+                                ul(class="answerCommentsList") 
+                                    each comment in ans.comments
+                                        li #{comment}
+            div(class='count')
+                h3 Word Count
+                each word in wordCounts
+                    p #{word.word} : #{word.count}
+            script(src='../public/methods.js')
+            script(src='https://code.jquery.com/jquery-3.2.1.min.js'
+            integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
+            crossorigin='anonymous')
+            script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
+            integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous')
+    

@@ -1,0 +1,3 @@
+document.getElementsByClassName('answer')[0].getElementsByClassName('comment-copy')[0].innerText
+
+Array.from(document.getElementsByClassName('answer')[0].getElementsByClassName('comment-copy')).map(el=>el.innerText)

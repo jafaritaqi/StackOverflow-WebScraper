@@ -1,0 +1,24 @@
+.container{
+    
+    display: flex;
+    flex-direction: row;
+    
+}
+.question{
+    background-color: antiquewhite;
+    overflow: scroll;
+    width: 1000px;
+    height: 800px;
+    padding: 5px;
+    margin-right: 20px;
+    
+
+}
+.count{
+    background-color: antiquewhite;
+    height: 800px;
+    width: 250px;
+    overflow: scroll;
+    float: right;
+    padding: 10px;
+}
